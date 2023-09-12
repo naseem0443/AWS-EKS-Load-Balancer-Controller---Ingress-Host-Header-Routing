@@ -220,7 +220,7 @@ kubectl get ingressclass
 # Describe IngressClass Resource
 ```
 kubectl describe ingressclass my-aws-ingress-class
-```
+
 
 # AWS Load Balancer Controller - External DNS Install
 
