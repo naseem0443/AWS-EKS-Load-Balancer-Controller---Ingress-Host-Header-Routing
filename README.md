@@ -197,13 +197,12 @@ kubectl get deployment -n kube-system aws-load-balancer-controller
 ```
 NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
 aws-load-balancer-controller   2/2     2            2           27s
-```
+
 
 # Uninstall AWS Load Balancer Controller
 ```
 helm uninstall aws-load-balancer-controller -n kube-system 
 ```
-# Create IngressClass Resource
 ```
 apiVersion: networking.k8s.io/v1
 kind: IngressClass
