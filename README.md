@@ -203,8 +203,6 @@ aws-load-balancer-controller   2/2     2            2           27s
 ```
 helm uninstall aws-load-balancer-controller -n kube-system 
 ```
-
-```
 # Create IngressClass Resource
 ```
 apiVersion: networking.k8s.io/v1
@@ -224,11 +222,8 @@ kubectl get ingressclass
 ```
 kubectl describe ingressclass my-aws-ingress-class
 ```
-# ALB ingress Yml
 
 # AWS Load Balancer Controller - External DNS Install
-
-
 
 ## Step-01: Introduction
 - **External DNS:** Used for Updating Route53 RecordSets from Kubernetes 
