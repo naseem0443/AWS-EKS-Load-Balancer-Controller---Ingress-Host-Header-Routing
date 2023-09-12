@@ -246,7 +246,6 @@ kubectl describe ingressclass my-aws-ingress-class
   - **Description:** Allow access to Route53 Resources for ExternalDNS
   - Click on **Create Policy**  
 
-```json
 ```
 {
   "Version": "2012-10-17",
