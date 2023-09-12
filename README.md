@@ -225,10 +225,10 @@ kubectl get ingressclass
 kubectl describe ingressclass my-aws-ingress-class
 ```
 # ALB ingress Yml
----
-title: AWS Load Balancer Controller - External DNS Install
-description: Learn AWS Load Balancer Controller - External DNS Install
----
+
+# AWS Load Balancer Controller - External DNS Install
+
+
 
 ## Step-01: Introduction
 - **External DNS:** Used for Updating Route53 RecordSets from Kubernetes 
@@ -247,6 +247,7 @@ description: Learn AWS Load Balancer Controller - External DNS Install
   - Click on **Create Policy**  
 
 ```json
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -273,8 +274,9 @@ description: Learn AWS Load Balancer Controller - External DNS Install
 }
 ```
 - Make a note of Policy ARN which we will use in next step
-```t
+
 # Policy ARN
+```
 arn:aws:iam::180789647333:policy/AllowExternalDNSUpdates
 ```  
 
@@ -283,8 +285,9 @@ arn:aws:iam::180789647333:policy/AllowExternalDNSUpdates
 - As part of this step, we are going to create a k8s Service Account named `external-dns` and also a AWS IAM role and associate them by annotating role ARN in Service Account.
 - In addition, we are also going to associate the AWS IAM Policy `AllowExternalDNSUpdates` to the newly created AWS IAM Role.
 ### Step-03-01: Create IAM Role, k8s Service Account & Associate IAM Policy
-```t
+
 # Template
+```
 eksctl create iamserviceaccount \
     --name service_account_name \
     --namespace service_account_namespace \
@@ -292,8 +295,9 @@ eksctl create iamserviceaccount \
     --attach-policy-arn IAM_policy_ARN \
     --approve \
     --override-existing-serviceaccounts
-
+```
 # Replaced name, namespace, cluster, IAM Policy arn 
+```
 eksctl create iamserviceaccount \
     --name external-dns \
     --namespace default \
@@ -304,12 +308,16 @@ eksctl create iamserviceaccount \
 ```
 ### Step-03-02: Verify the Service Account
 - Verify external-dns service account, primarily verify annotation related to IAM Role
-```t
-# List Service Account
-kubectl get sa external-dns
 
+# List Service Account
+```
+kubectl get sa external-dns
+```
 # Describe Service Account
+
+```
 kubectl describe sa external-dns
+```
 
 
 
